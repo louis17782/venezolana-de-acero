@@ -1,0 +1,139 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Openbutton from "../components/Hamburguer.astro";
+import logo from "../assets/image/logo.png";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href={logo.src} />
+		<meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+		<meta name="generator" content={Astro.generator} /> 
+		<title>Venezolana de acero</title>
+		<script src="https://unpkg.com/@phosphor-icons/web"></script>
+	</head>
+  <body>
+    <Openbutton />
+    <Navigation />
+    <slot />
+  </body>
+</html>
+
+<style is:global lang="scss">
+  @use '../assets/sass/index' as *; 
+    
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ol, a, li {
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: $regular;
+    font-family: $heading;
+    color: $white;
+    margin: 0 5%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: $regular;
+    font-family: $heading;
+    color: $black;
+    margin: 0 5%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-family: $heading;
+    font-weight: $bold;
+    color: $white;
+    margin: 0 15%; 
+  }
+  
+  .underline {
+    width: 130px;
+    height: 2px;
+    background-color: $blue;
+    justify-content: left;
+    border-radius: 2px;
+    margin: 0 5% 20px; 
+  }
+  
+  p {
+    font-size: 1.25rem;
+    font-family: $heading;
+    font-weight: $regular;
+    font-style: italic;
+    color: $white;
+    margin:0 0 10px; 
+  }
+
+  a {
+    font-size: 1rem;
+    font-weight: $regular;
+    font-family: $text;
+    color: $white;
+  }
+  
+  // boton
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .primarybutton {
+    width: 150px;
+    height: 40px;
+    margin: 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+    
+  a {
+    font-family: $heading;
+    font-weight: $regular;
+    font-style: $text;
+    font-size: 1rem;
+  }
+
+  .transparent {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 5px;
+  }
+  
+  .primarybutton {
+    background-color: $blue;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .primarybutton:hover {
+    background-color: rgba($blue, 50%);
+  }
+
+  .transparent:hover {
+    background-color: rgba($blue, 50%);
+  }
+</style>
