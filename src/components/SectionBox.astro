@@ -1,0 +1,58 @@
+---
+import imageA from "../assets/image/image14.webp";
+---
+
+<section>
+  <figure>
+    <div class="content-back-B">
+      <div class="sec"> 
+        <h4>our history</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<style lang="scss">
+  @use '../assets/sass/index' as *;
+
+  figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto; 
+    background-color: $white;
+    padding: 40px 5%;
+  }
+
+  .sec{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .content-back-B {
+    position: relative;
+    background-image: url("../assets/image/image19.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 100%;
+    height: 300px;
+  }
+
+  p, h4{
+    color: $white;
+  }
+
+</style>

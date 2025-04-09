@@ -1,0 +1,94 @@
+---
+import imageA from "../assets/image/image8.jpg";
+import imageB from "../assets/image/image24.webp";
+import imageC from "../assets/image/image14.webp";
+---
+
+<article>
+	<h2>THE NEWS</h2>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Qui doloribus officiis, rerum, magnam, soluta voluptatum nam nisi aut velit laborum asperiores omnis molestias voluptatibus!
+		Eius debitis harum nobis delectus ullam!</p>
+</article>
+<section>
+	<div>
+		<img src={imageA.src} alt="image">
+		<p class="text">12 de marzo 2025</p>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.</p>
+		<div class="underline"></div>
+	</div>
+	<div>
+		<img src={imageB.src} alt="image">
+		<p class="text">12 de marzo 2025</p>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.</p>
+		<div class="underline"></div>
+	</div>
+	<div>
+		<img src={imageC.src} alt="image">
+		<p class="text">12 de marzo 2025</p>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+		Temporibus, quod.</p>
+		<div class="underline"></div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use '../assets/sass/index' as *;
+	 
+	article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: left;
+		width: 100%;
+		background-color: $white;
+		padding: 40px 5%;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto; 
+		background-color: $white;
+		padding: 40px 5%;
+	}
+
+	section > div {
+		width: 100%;
+		max-width: 500px; 
+		margin-bottom: 20px; 
+		background-color: $white;
+		border-radius: 5px; 
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+		padding: 20px;
+	}
+
+	img {
+		width: 100%;
+		border-radius: 5px;
+	}
+
+	p{
+		color: $black;
+		margin: 20px 0;
+	}
+
+	.text {
+		font-size: 1.5rem;
+    font-family: $text;
+    font-weight: $regular;
+		color: $blueSecond;
+		margin: 30px 0;
+	}
+
+
+</style>

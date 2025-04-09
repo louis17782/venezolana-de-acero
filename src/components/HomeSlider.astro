@@ -35,7 +35,7 @@ const {images} = Astro.props;
 
   #slider {
     display: flex;
-    width: 300%; // cantidad de img
+    width: 400%; // cantidad de img
     height: 100%;
     transform: translateX(0);
     transition: transform 0.5s;
@@ -70,7 +70,7 @@ const {images} = Astro.props;
   }
 
   img {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     aspect-ratio: 402 / 300;
   }
 
@@ -103,9 +103,9 @@ const {images} = Astro.props;
 
   const slide = () => {
     const slider = document.getElementById('slider');
-    slider.style.transform = `translateX(${-100 * currentPosition / 3}%)`;
+    slider.style.transform = `translateX(${-100 * currentPosition / 4}%)`;
 
-    if (currentPosition === 2) {
+    if (currentPosition === 3) {
       currentPosition = 0;
     } else {
       currentPosition++;
