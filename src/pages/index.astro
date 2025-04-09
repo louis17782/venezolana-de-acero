@@ -2,14 +2,19 @@
 import slide1 from "../assets/image/image1.webp";
 import slide2 from "../assets/image/image3.webp";
 import slide3 from "../assets/image/image4.webp";
+import BoxNews from "../components/boxNews.astro";
 import HomeSlider from "../components/HomeSlider.astro";
 import SectionFlex from "../components/SectionFlex.astro";
 import SpanishLayout from "../layouts/SpanishLayout.astro";
+import slide4 from "../assets/image/image20.webp";
+import SectionBox from "../components/SectionBox.astro";
 ---
 
 <SpanishLayout title="portafolio">
-	<HomeSlider images={[slide1.src, slide2.src, slide3.src]} />
+	<HomeSlider images={[slide1.src, slide2.src, slide3.src, slide4.src]} />
 	<SectionFlex />
+	<BoxNews />
+	<SectionBox />
 </SpanishLayout>
 <script>
 	import "../script/mainMenu";
