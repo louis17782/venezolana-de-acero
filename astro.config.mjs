@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://venezolana-de-acero.netlify.app/",
+  site: "https://venezolanadeacero.netlify.app/",
   prefetch: true,
   vite: {
     css: {
