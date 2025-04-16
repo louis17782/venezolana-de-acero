@@ -24,8 +24,8 @@ projects.forEach(project => {
   });
 });
 
-// Close menu after navigation
-const navLinks = document.querySelectorAll('.navlinks a[href="#albums"], .navlinks a[href="#videos"], .navlinks a[href="#media"], .navlinks a[href="#home"], .navlinks a[href="#gallery"]');
+// Close menu after navigation 
+const navLinks = document.querySelectorAll('.navlinks a[href="#home"], .navlinks a[href="#about"], .navlinks a[href="#ivs"], .navlinks a[href="#projects"], .navlinks a[href="#contact"]');
 
 function closeMenuAfterNavigation() {
   document.querySelector('.blur-background').classList.remove('active');
@@ -35,3 +35,21 @@ function closeMenuAfterNavigation() {
 navLinks.forEach(link => {
   link.addEventListener('click', closeMenuAfterNavigation);
 });
+
+//animated
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animated");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+  });

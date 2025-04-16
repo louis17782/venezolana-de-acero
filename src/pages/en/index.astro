@@ -1,0 +1,53 @@
+---
+import slide1 from "../../assets/image/image1.webp";
+import slide2 from "../../assets/image/image3.webp";
+import slide3 from "../../assets/image/image4.webp";
+import BoxNews from "../../components/boxNews.astro";
+import HomeSlider from "../../components/HomeSlider.astro";
+import SectionFlex from "../../components/SectionFlex.astro";
+import EnglishLayout from "../../layouts/EnglishLayout.astro";
+import slide4 from "../../assets/image/image20.webp";
+import SectionBox from "../../components/SectionBox.astro";
+import Footer from "../../components/Footer.astro";
+import Contact from "../../components/Contact.astro";
+---
+
+<EnglishLayout title="Venezolana de acero">
+	<HomeSlider images={[slide1.src, slide2.src, slide3.src, slide4.src]}
+	title="VENEZOLANO DE ACERO"
+	textA="SPECIALISTS IN THE MARKETING" 
+	textB="AND DISTRIBUTION OF STEEL PRODUCTS AT THE NATIONAL AND INTERNATIONAL LEVEL"
+	buttomA="See more"
+	buttomB="contact us"/>
+	<SectionFlex
+	title="Welcome..."
+	EN="TO"
+	textA="Lorem ipsum dolor, labore molestias consequuntur earum dolorum est "
+	textB="Lorem ipsum dolor, labore molestias consequuntur earum dolorum est "
+	textC="lorem ipsum dolor sit"
+	buttomA="See more"
+	titleA="About us"
+	textD="We are a company specialized on the marketing and distribution of steel products on the national and international market to boost and transform the Venezuelan economy." />
+	<BoxNews
+	title="The company"
+	textA="Venezolana de Acero has as its main activity to commercialize, distribute and export products made by the national steel industry, as support and support in the Venezuelan economy!"
+	textB="Commercialize, distribute, and export products manufactured by the national steel industry."
+	textC="To be the leading company in promoting national and international marketing of the steel industry in Venezuela."
+	textD="PRODUCT"
+	subtitleA="MISION"
+	subtitleB="VISION"
+	subtitleC="PRODUCTO" />
+	<SectionBox
+	 titleA="contenido1"
+	 titleB="contenido2"
+	 titleC="contenido3"
+	 titleD="contenido4"
+	 titleE="contenido5"
+	 titleF="contenido6"
+	 titleG="contenido7"/>
+	  <Contact />
+	<Footer />
+</EnglishLayout>
+<script>
+	import "../../script/mainMenu";
+</script>

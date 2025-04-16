@@ -1,25 +1,23 @@
 ---
-import NavigationEn from "../components/NavigationEn.astro";
+import Navigation from "../components/NavigationEn.astro";
 import Openbutton from "../components/Hamburguer.astro";
 import logo from "../assets/image/logo.png";
-const {title} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-    <link rel="icon" type="image/png" href={logo.src} />
-    <meta name="google-site-verification" content="5_DNp260tsiWoaxNtCC362jjS14Gdn-Gt6tMj7JMBgk" />
+		<link rel="icon" type="image/png" href={logo.src} />
 		<meta name="viewport" content="width=device-width" />
-    <meta name="description" content="portfolio luis santeliz frond end developer">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+    <meta name="description" content="" />
+		<meta name="generator" content={Astro.generator} /> 
+		<title>Venezolana de acero</title>
 		<script src="https://unpkg.com/@phosphor-icons/web"></script>
 	</head>
   <body>
     <Openbutton />
-    <NavigationEn />
+    <Navigation />
     <slot />
   </body>
 </html>
@@ -31,7 +29,7 @@ const {title} = Astro.props;
     scroll-behavior: smooth;
   }
   
-  ol, a {
+  ol, a, li {
     list-style: none;
     text-decoration: none;
   }
@@ -47,88 +45,102 @@ const {title} = Astro.props;
   }
   
   h1 {
-    font-size: 2.5rem;
-    font-weight: $bold;
+    font-size: 2rem;
+    font-weight: $regular;
     font-family: $heading;
-    color: $secondary;
+    color: $white;
     margin: 0 5%;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: $bold;
     font-family: $heading;
-    color: $secondary;
-    margin: 0 5%;
+    color: $black;
+    margin: 0 0%;
   }
 
   h3 {
     font-size: 2rem;
     font-family: $heading;
     font-weight: $bold;
-    color: $secondary;
-    margin: 0 15%; 
+    color: $black;
+    margin: 0 0%; 
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-family: $heading;
+    font-weight: $bold;
+    color: $white;
   }
   
   .underline {
-    width: 130px;
+    width: 100%;
     height: 2px;
-    background-color: $tertiary;
+    background-color: $blue;
     justify-content: left;
     border-radius: 2px;
-    margin: 0 5% 20px; 
+    margin: 0 0 50px; 
   }
   
   p {
     font-size: 1.25rem;
-    font-family: $text;
+    font-family: $heading;
     font-weight: $regular;
-    color: $secondary;
-    margin: 0 5%; 
+    color: $white;
+    margin:10px 5%; 
   }
 
   a {
     font-size: 1rem;
     font-weight: $regular;
     font-family: $text;
-    color: $tertiary;
+    color: $white;
   }
   
-  // inicia boton rojo de accion
+  // boton
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
   
   .primarybutton {
-    width: 90%;
-    height: 60px;
-    padding: 20px;
-    margin: 10% 5% 0px;
+    width: 150px;
+    height: 40px;
+    margin: 0;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
   }
-  
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    font-family: $text;
-    font-weight: $regular;
-    font-size: 1.5rem;
-    color: $tertiary;
     
-    a {
-      font-family: $text;
-      font-weight: $regular;
-      font-size: 1.5rem;
-    }
+  a {
+    font-family: $heading;
+    font-weight: $regular;
+    font-style: $text;
+    font-size: 1rem;
+  }
+
+  .transparent {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 5px;
   }
   
   .primarybutton {
-    background-color: $primary;
-    box-shadow: 0 0 10px 10px rgba($tertiary, 35%);
+    background-color: $blue;
+    border-radius: 5px;
+    border: none;
   }
   
   .primarybutton:hover {
-    background-color: $primary;
-    box-shadow: 0 0 25px 15px rgba($tertiary, 25%);
+    background-color: rgba($blue, 50%);
+  }
+
+  .transparent:hover {
+    background-color: rgba($blue, 50%);
   }
 </style>
+

@@ -8,13 +8,45 @@ import SectionFlex from "../components/SectionFlex.astro";
 import SpanishLayout from "../layouts/SpanishLayout.astro";
 import slide4 from "../assets/image/image20.webp";
 import SectionBox from "../components/SectionBox.astro";
+import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<SpanishLayout title="portafolio">
-	<HomeSlider images={[slide1.src, slide2.src, slide3.src, slide4.src]} />
-	<SectionFlex />
-	<BoxNews />
-	<SectionBox />
+<SpanishLayout title="Venezolana de acero">
+	<HomeSlider images={[slide1.src, slide2.src, slide3.src, slide4.src]}
+	title="VENEZOLANO DE ACERO"
+	textA="ESPECIALISTAS EN LA COMERCIALIZACIÓN" 
+	textB="Y DISTRIBUCIÓN DE PRODUCTOS SIDERURGICOS A NIVEL NACIONAL E INTERNACIONAL"
+	buttomA="Leer más"
+	buttomB="Contactanos"/>
+	<SectionFlex
+	title="Bienvenido..."
+	EN="A"
+	textA="Lorem ipsum dolor, labore molestias consequuntur earum dolorum est "
+	textB="Lorem ipsum dolor, labore molestias consequuntur earum dolorum est "
+	textC="lorem ipsum dolor sit"
+	buttomA="Leer mas"
+	titleA="Acerca de nosotros"
+	textD="Somos una empresa especializada en la comercialización  y distribución de productos siderúrgicos a nivel nacional e internacional para impulsar y transformar la economía de Venezuela." />
+	<BoxNews
+	title="La empresa"
+	textA="Venezolana de Acero tiene como actividad principal comercializar, distribuir y exportar productos elaborados por la industria siderúrgica nacional, como soporte y apoyo en la economía venezolana.!"
+	textB="Comercializar, distribuir y exportar productos elaborados por la industria siderúrgica nacional"
+	textC="Ser la empresa líder en impulsar la comercialización nacional e internacional de la industria siderúrgica en Venezuela."
+	textD="contenido2"
+	subtitleA="MISION"
+	subtitleB="VISION"
+	subtitleC="PRODUCTO" />
+	<SectionBox
+	 titleA="contenido1"
+	 titleB="contenido2"
+	 titleC="contenido3"
+	 titleD="IVS CORP"
+	 titleE="contenido5"
+	 titleF="contenido6"
+	 titleG="contenido7"/>
+	  <Contact />
+	<Footer />
 </SpanishLayout>
 <script>
 	import "../script/mainMenu";
