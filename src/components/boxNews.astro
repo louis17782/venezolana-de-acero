@@ -37,6 +37,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
     opacity: 0; 
     transform: translateX(100px); 
     transition: opacity 0.7s ease, transform 0.7s ease;
+		will-change: transform, opacity; 
   }
 
   .animated.visible {
@@ -65,6 +66,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		width: 100%;
 		background-color: $white;
 		padding: 40px 5%;
+		overflow: hidden;
 	}
 
 	section {
@@ -78,6 +80,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		background-color: $white;
 		padding: 40px 5%;
 		gap: 20px;
+		overflow: hidden;
 	}
 
 	section > div {

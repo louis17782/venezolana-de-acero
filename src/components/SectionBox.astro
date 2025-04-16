@@ -52,6 +52,7 @@ const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
     opacity: 0; 
     transform: translateX(100px); 
     transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: transform, opacity; 
   }
 
   .animated.visible {
@@ -79,6 +80,7 @@ const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
     background-position: center calc(50% + 570px);
     background-size: cover;
     padding: 40px 5%;
+    overflow: hidden;
   }
 
   figure{
