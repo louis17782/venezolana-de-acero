@@ -1,0 +1,68 @@
+---
+import imageA from "../assets/image/image14.webp";
+---
+<section id="contact">
+  <div class="content-flex">
+    <h2>CONTACTO</h2>
+    <p>Telefono:</p>
+    <p>(123)0000000</p>
+    <p>Correo:</p>
+    <p>email@dominio.com</p>
+  </div>
+  <div class="flex.content">
+    <img src={imageA.src} alt="">
+  </div>
+</section>
+    
+<style lang="scss">
+  @use "../assets/sass/index" as *;
+
+  section {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 40px 5%;
+    margin: 0;
+    flex-direction: column;
+    background-color: $white;
+    gap: 50px;
+  }
+
+  .content-flex {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    color: $black;
+    margin: 0;
+  }
+
+  h2 {
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: 1024px) {
+
+    section {
+      flex-direction: row-reverse;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p{
+      font-size: 1.5rem;
+      padding: 20px;
+    }
+  }
+</style>

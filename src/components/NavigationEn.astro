@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/image/logo.png";
+import logoA from "../assets/image/logo-a.png";
 ---
 
 <div class="blur-background">     
@@ -9,17 +10,18 @@ import logo from "../assets/image/logo.png";
       <i class="ph ph-x"></i>
     </div> 
     <div class="nav-container">
-      <img class="logo" src={logo.src} alt="#">
-      <ul class="navlinks"> 
+      <ul class="navlinks">
+        <a href="/"><img class="logo" src={logo.src} alt="logo"></a> 
         <li><a href="#home" data-astro-prefetch>HOME</a></li>
-        <li><a href="#albums" data-astro-prefetch>ABOUT</a></li>
-        <li><a href="#videos" data-astro-prefetch>IVS CORP</a></li>
-        <li><a href="#gallery" data-astro-prefetch>PROJECTS</a></li>
-        <li><a href="#media" data-astro-prefetch>CONTACT</a></li>
-        <div class="content">
+        <li><a href="#about" data-astro-prefetch>ABOUT</a></li>
+        <li><a href="#ivs" data-astro-prefetch>IVS CORP</a></li>
+        <li><a href="#projects" data-astro-prefetch>PROJECTS</a></li>
+        <li><a href="#contact" data-astro-prefetch>CONTACT</a></li>
+        <div class="content"> 
           <li><a id="language-toggle" href="/" data-astro-prefetch rel="noreferrer">ES</a></li>
           <i class="ph ph-translate"></i>
         </div>
+        <a href="/"><img class="logo" src={logoA.src} alt="logo"></a>
       </ul>
     </div>
   </nav>
@@ -53,7 +55,7 @@ import logo from "../assets/image/logo.png";
     right: -1000px; 
     width: 100%;
     height: 100%;
-    background-color: rgba($primary, 80%);
+    background-color: $white;
     transition: right 0.5s ease-out;
     z-index: 2; 
   }
@@ -70,17 +72,17 @@ import logo from "../assets/image/logo.png";
     margin: 0;
   }
 
-  .content, i {
+  .content, .i {
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 1.7rem;
-    color: $secondary;
+    color: $black;
   }
 
   li:hover {
     text-decoration: underline;
-    text-decoration-color: $tertiary;
+    text-decoration-color: $black;
     text-underline-offset: 13px;
     text-decoration-thickness: 3px;
   }
@@ -93,10 +95,10 @@ import logo from "../assets/image/logo.png";
     display: block;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: $regular;
+    font-weight: $medium;
     font-family: $heading;
-    color: $secondary;
-    margin-top: 90px;
+    color: $blueTertiary;
+    margin-top: 50px;
   }
 
   .navlinks ul {
@@ -117,8 +119,8 @@ import logo from "../assets/image/logo.png";
 
   #close-menu {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -127,80 +129,79 @@ import logo from "../assets/image/logo.png";
 
   .ph-x {
     font-size: 3rem;
+    color: $blue;
   }
 
   .nav-container {
-      position: relative;
-      top: 0;
+    position: relative;
+    top: 0;
   }
 
   .logo {
-    position: absolute;
-    top: 0;
-    width: 100px;
+    width: 200px;
   }
 
   @media only screen and (min-width: 1024px) {
 
-    .nav-container {
-      position: fixed;
-      z-index: 99;
-      width: 100%;
-    }
+  .nav-container {
+    position: relative;
+    height: 100%;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+  }
 
-    nav {
-      right: 0;
-      top: 0;
-      height: auto;
-      background-color: rgba($primary, 90%);
-      max-width: 100%;
-      margin: 0 auto;
-      z-index: 99;
-    }
+  nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: auto;
+    background-color: $white;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 99;
+  }
 
-    .navlinks {
-      display: flex;
-      flex-direction: row;
-      height: 60px;
-      margin: 0 10%;
-      justify-content: space-around;
-      align-items: center;
-      text-decoration: none;
-      list-style: none;
-    }
+  .navlinks {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+  }
 
-    .close-menu-container {
-      display: none;
-    }
+  .close-menu-container {
+    display: none;
+  }
 
-    .blur-background {
-      position: static; 
-      top: auto; 
-      left: auto; 
-      width: auto; 
-      height: auto; 
-      backdrop-filter: none;
-      background-color: transparent; 
-      opacity: 1; 
-      transition: none; 
-      z-index: auto; 
-      pointer-events: all; 
-    }
+  .blur-background {
+    position: static; 
+    top: auto; 
+    left: auto; 
+    width: auto; 
+    height: auto; 
+    backdrop-filter: none;
+    background-color: transparent; 
+    opacity: 1; 
+    transition: none; 
+    z-index: auto; 
+    pointer-events: all; 
+  }
 
-    .nav-container {
-      position: relative;
-      top: 0;
-    }
+  .nav-container {
+    position: relative;
+    top: 0;
+  }
 
-    .logo {
-      position: absolute;
-      top: 0;
-      width: 100px;
-    }
+  .logo {
+    width: 100px;
+  }
 
-    .navlinks a {
-      font-size: 1rem;
-      margin-top: 0;
-    }
+  .navlinks a {
+    font-size: 1rem;
+    margin-top: 0;
+  }
   }
 </style>

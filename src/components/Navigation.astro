@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/image/logo.png";
+import logoA from "../assets/image/logo-a.png";
 ---
 
 <div class="blur-background">     
@@ -9,17 +10,18 @@ import logo from "../assets/image/logo.png";
       <i class="ph ph-x"></i>
     </div> 
     <div class="nav-container">
-      <ul class="navlinks"> 
-        <img class="logo" src={logo.src} alt="logo">
+      <ul class="navlinks">
+        <a href="/"><img class="logo" src={logo.src} alt="logo"></a> 
         <li><a href="#home" data-astro-prefetch>INICIO</a></li>
-        <li><a href="#albums" data-astro-prefetch>NOSOTROS</a></li>
-        <li><a href="#videos" data-astro-prefetch>IVS CORP</a></li>
-        <li><a href="#gallery" data-astro-prefetch>PROYECTOS</a></li>
-        <li><a href="#media" data-astro-prefetch>CONTACTO</a></li>
+        <li><a href="#about" data-astro-prefetch>NOSOTROS</a></li>
+        <li><a href="#ivs" data-astro-prefetch>IVS CORP</a></li>
+        <li><a href="#projects" data-astro-prefetch>PROYECTOS</a></li>
+        <li><a href="#contact" data-astro-prefetch>CONTACTO</a></li>
         <div class="content"> 
           <li><a id="language-toggle" href="/en" data-astro-prefetch rel="noreferrer">EN</a></li>
           <i class="ph ph-translate"></i>
         </div>
+        <a href="#ivs"><img class="logo" src={logoA.src} alt="logo"></a>
       </ul>
     </div>
   </nav>
@@ -86,7 +88,7 @@ import logo from "../assets/image/logo.png";
   }
 
   .content li {
-    display: inline-block;  // eliminar content
+    display: inline-block;
   }
 
   .navlinks a {
@@ -96,7 +98,7 @@ import logo from "../assets/image/logo.png";
     font-weight: $medium;
     font-family: $heading;
     color: $blueTertiary;
-    margin-top: 90px;
+    margin-top: 50px;
   }
 
   .navlinks ul {
@@ -150,11 +152,11 @@ import logo from "../assets/image/logo.png";
   }
 
   nav {
-    position: static;
+    position: fixed;
     right: 0;
     top: 0;
     height: auto;
-    background-color: $black;
+    background-color: $white;
     max-width: 100%;
     margin: 0 auto;
     z-index: 99;

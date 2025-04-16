@@ -1,23 +1,23 @@
 ---
-const {images} = Astro.props;
+const {images, title, textA, textB, buttomA, buttomB} = Astro.props;
 ---
 
-<header>
+<header id="home">
   <div id="slider">
     {images.map((image) => (
       <img src={image} alt="Slider image" />
     ))}
   </div>
   <h1 id="main-title">
-    <span>Lorem ipsum dolor sit amet.</span>
-    VENEZOLANA DE ACERO
-    <span>Lorem ipsum dolor sit amet.</span>
+    <span>{textA}</span>
+    {title}
+    <span>{textB}</span>
     <div class="button-container">
       <button class="primarybutton">
-        <a href="" target="_blank">leer mas</a>
+        <a href="#projects">{buttomA}</a>
       </button>
       <button class="transparent">
-        <a href="" target="_blank">nuestra historia</a>
+        <a href="#contact">{buttomB}</a>
       </button>
     </div>
   </h1>
@@ -57,7 +57,7 @@ const {images} = Astro.props;
     transition: background-color 0.3s;
     font-family: $heading;
     font-weight: $bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 0.5;
   }
 
@@ -66,7 +66,8 @@ const {images} = Astro.props;
     font-weight: $regular;
     font-family: $text;
     color: $white;
-    margin: 20px 0;
+    margin: 30px 0;
+    line-height: 1.5;
   }
 
   img {
@@ -76,8 +77,7 @@ const {images} = Astro.props;
 
   @media (min-width: 1024px) {
     h1 {
-      top: 40px;
-      font-size: 10rem;
+      font-size: 4rem;
     }
 
     header {
@@ -87,13 +87,14 @@ const {images} = Astro.props;
       overoflow-x: hidden;
       overflow: hidden;
     }
-  }
-  span {
-    font-size: 1rem;
-    font-weight: $regular;
-    font-family: $text;
-    color: $white;
-    margin: 20px 0;
+
+    span {
+      font-size: 1rem;
+      font-weight: $regular;
+      font-family: $text;
+      color: $white;
+      margin: 40px 0;
+    }
   }
 </style>
 

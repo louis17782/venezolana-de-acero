@@ -2,43 +2,60 @@
 import imageA from "../assets/image/image8.jpg";
 import imageB from "../assets/image/image24.webp";
 import imageC from "../assets/image/image14.webp";
+const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = Astro.props;	
 ---
 
-<article>
-	<h2>THE NEWS</h2>
-	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Qui doloribus officiis, rerum, magnam, soluta voluptatum nam nisi aut velit laborum asperiores omnis molestias voluptatibus!
-		Eius debitis harum nobis delectus ullam!</p>
+<article id="#aboutSecond">
+	<h2>{title}</h2>
+	<p class="animated">{textA}</p>
 </article>
 <section>
-	<div>
+	<div class="card">
 		<img src={imageA.src} alt="image">
-		<p class="text">12 de marzo 2025</p>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.</p>
+		<p class="animated text">{subtitleA}</p>
+		<p>{textB}</p>
 		<div class="underline"></div>
 	</div>
-	<div>
+	<div class="card">
 		<img src={imageB.src} alt="image">
-		<p class="text">12 de marzo 2025</p>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.</p>
+		<p class="animated text">{subtitleB}</p>
+		<p>{textC}</p>
 		<div class="underline"></div>
 	</div>
-	<div>
+	<div class="card">
 		<img src={imageC.src} alt="image">
-		<p class="text">12 de marzo 2025</p>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-		Temporibus, quod.</p>
+		<p class="animated text">{subtitleC}</p>
+		<p>{textD}</p>
 		<div class="underline"></div>
 	</div>
 </section>
 
 <style lang="scss">
 	@use '../assets/sass/index' as *;
+
+	.animated {
+    opacity: 0; 
+    transform: translateX(100px); 
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animated.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animated:nth-child(1) {
+    transition-delay: 0.4s;
+  }
+
+  .animated:nth-child(2) {
+    transition-delay: 0.6s;
+  }
+
+  .animated:nth-child(3) {
+    transition-delay: 0.8s;
+  }
+  //animation end
 	 
 	article {
 		display: flex;
@@ -52,14 +69,15 @@ import imageC from "../assets/image/image14.webp";
 
 	section {
 		display: flex;
-		flex-direction: column;
+		flex-wrap:wrap; 
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
 		width: 100%;
 		max-width: 1200px;
-		margin: 0 auto; 
+		margin: 0 auto;
 		background-color: $white;
 		padding: 40px 5%;
+		gap: 20px;
 	}
 
 	section > div {
@@ -90,5 +108,29 @@ import imageC from "../assets/image/image14.webp";
 		margin: 30px 0;
 	}
 
+	.card {
+		display: flex;
+		flex-direction: column; 
+		justify-content: flex-start; 
+  }
 
+	.underline {
+		width: 100%;
+		margin-top: auto; 
+		align-self: center;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		article {
+			align-items: center;
+			text-align: center;
+			padding: 40px 20%;
+		}
+
+		section {
+			flex-direction: row;
+			flex-wrap: nowrap;
+      gap: 50px; 
+		}
+	}
 </style>

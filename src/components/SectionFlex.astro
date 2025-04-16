@@ -1,40 +1,64 @@
 ---
 import imageA from "../assets/image/image19.webp";
 import imageB from "../assets/image/image2.jpg";
+const { title, buttomA, textA, textB, textC, titleA, textD, EN } = Astro.props;
 ---
-  <section>
+<section id="about">
+  <div class="content-row">
     <div>
       <img src={imageA.src} alt="">
     </div>
     <div>
-      <h2>Welcome...</h2>
-      <h3>to Venezolana de <span>acero</span></h3>
+      <h2>{title}</h2>
+      <h3>{EN} Venezolana de <span>ACERO</span></h3>
       <button class="primarybutton">
-      <a href="" target="_blank">leer mas</a>
+      <a href="#projects">{buttomA}</a>
       </button>
     </div>
-    </div>
     <div>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Eveniet totam quidem ab nihil cumque ex.
-      Nemo maxime nobis fuga expedita.</p>
-      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Atque, suscipit?</p>
-      <p><span>Lorem ipsum dolor sit amet.</span></p>
+      <p class="animated">{textA}</p>
+      <p class="animated text">{textB}</p>
+      <p class="animated"><span>{textC}</span></p>
     </div>
+  </div>
   <div class="content-area">
     <img src={imageB.src} alt="">
-    <h2>ACERCA DE NOSOTROS</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, labore molestias consequuntur
-    earum dolorum est totam excepturi dolorem animi ratione.</p>
+    <div>
+      <h2>{titleA}</h2>
+      <p>{textD}</p>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @use '../assets/sass/index' as *;
 
+  .animated {
+    opacity: 0; 
+    transform: translateX(100px); 
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animated.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animated:nth-child(1) {
+    transition-delay: 0.4s;
+  }
+
+  .animated:nth-child(2) {
+    transition-delay: 0.6s;
+  }
+
+  .animated:nth-child(3) {
+    transition-delay: 0.8s;
+  }
+  //animation end
+
   section {
-    background-image: linear-gradient(rgba(197, 195, 230, 90%), rgba(197, 195, 230, 90%)), url("../assets/image/primaryback.webp");
+    background-image: linear-gradient(rgba(202, 238, 249, 0.9), rgba(202, 238, 249, 0.9)), url("../assets/image/primaryback.webp");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -90,6 +114,40 @@ import imageB from "../assets/image/image2.jpg";
     p{
      margin: 20px 0;
     }
+  }
+
+  .content-row {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 1024px) {
+   .content-row {
+    flex-direction: row;
+    gap: 50px;
+   }
+
+   img {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+   }
+
+   .content-area {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+    margin: 0;
+    padding: 100px 0;
+    img {
+      width: 100%;
+      min-width: 500px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+   }
   }
 
 </style>
