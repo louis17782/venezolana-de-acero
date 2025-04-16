@@ -1,5 +1,5 @@
 ---
-const {images, title, textA, textB, buttomA, buttomB} = Astro.props;
+const {images, title, textB, buttomA, buttomB} = Astro.props;
 ---
 
 <header id="home">
@@ -9,7 +9,6 @@ const {images, title, textA, textB, buttomA, buttomB} = Astro.props;
     ))}
   </div>
   <h1 id="main-title">
-    <span>{textA}</span>
     {title}
     <span>{textB}</span>
     <div class="button-container">
@@ -52,6 +51,7 @@ const {images, title, textA, textB, buttomA, buttomB} = Astro.props;
     height: 100%;
     padding: 0;
     padding-left: 5%;
+    padding-top: 70px;
     margin: 0;
     background-color: rgba($black, 60%);
     transition: background-color 0.3s;
