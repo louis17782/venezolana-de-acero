@@ -1,5 +1,6 @@
 ---
 const {images, title, textB, buttomA, buttomB} = Astro.props;
+import logo from "../assets/image/logo.png";
 ---
 
 <header id="home">
@@ -9,6 +10,7 @@ const {images, title, textB, buttomA, buttomB} = Astro.props;
     ))}
   </div>
   <h1 id="main-title">
+    <a href="/"><img class="logo" src={logo.src} alt="logo"></a>
     {title}
     <span>{textB}</span>
     <div class="button-container">
@@ -24,6 +26,14 @@ const {images, title, textB, buttomA, buttomB} = Astro.props;
 
 <style lang="scss">
   @use '../assets/sass/index' as *;
+
+  .logo {
+    position: absolute;
+    width: 150px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
 
   header {
     position: relative;
@@ -53,7 +63,7 @@ const {images, title, textB, buttomA, buttomB} = Astro.props;
     padding-left: 5%;
     padding-top: 70px;
     margin: 0;
-    background-color: rgba($black, 60%);
+    background: linear-gradient(to bottom, rgba($black, 40%), rgba($black, 80%));;
     transition: background-color 0.3s;
     font-family: $heading;
     font-weight: $bold;
