@@ -29,10 +29,10 @@ import logo from "../assets/image/logo.png";
 
   .logo {
     position: absolute;
-    width: 150px;
+    width: 100px;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 99;
   }
 
   header {
@@ -88,6 +88,10 @@ import logo from "../assets/image/logo.png";
   @media (min-width: 1024px) {
     h1 {
       font-size: 4rem;
+    }
+
+    h1 .logo {
+      display: none;
     }
 
     header {
