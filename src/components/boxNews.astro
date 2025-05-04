@@ -13,20 +13,20 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 	<div class="card">
 		<img src={imageA.src} alt="image">
 		<p class="animated text">{subtitleA}</p>
-		<p>{textB}</p>
 		<div class="underline"></div>
+		<p>{textB}</p>
 	</div>
 	<div class="card">
 		<img src={imageB.src} alt="image">
 		<p class="animated text">{subtitleB}</p>
-		<p>{textC}</p>
 		<div class="underline"></div>
+		<p>{textC}</p>
 	</div>
 	<div class="card">
 		<img src={imageC.src} alt="image">
 		<p class="animated text">{subtitleC}</p>
-		<p>{textD}</p>
 		<div class="underline"></div>
+		<p>{textD}</p>
 	</div>
 </section>
 
@@ -67,6 +67,10 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		background-color: $white;
 		padding: 40px 5%;
 		overflow: hidden;
+
+		h2 {
+			margin-bottom: 20px;
+		}
 	}
 
 	section {
@@ -89,7 +93,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		margin-bottom: 20px; 
 		background-color: $white;
 		border-radius: 5px; 
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+		box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1); 
 		padding: 20px;
 	}
 
@@ -100,7 +104,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 
 	p{
 		color: $black;
-		margin: 20px 0;
+		margin: 0;
 	}
 
 	.text {
@@ -108,20 +112,15 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
     font-family: $text;
     font-weight: $regular;
 		color: $blueSecond;
-		margin: 30px 0;
+		margin: 10px 0;
 	}
 
 	.card {
-		display: flex;
-		flex-direction: column; 
-		justify-content: flex-start; 
-  }
-
-	.underline {
-		width: 100%;
-		margin-top: auto; 
-		align-self: center;
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+  height: auto; 
+}
 
 	@media only screen and (min-width: 1024px) {
 		article {
