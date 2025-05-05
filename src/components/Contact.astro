@@ -1,16 +1,12 @@
 ---
-import imageA from "../assets/image/image14.webp";
+const { title } = Astro.props;
 ---
 <section id="contact">
   <div class="content-flex">
-    <h2>CONTACTO</h2>
-    <p>Telefono:</p>
-    <p>(123)0000000</p>
-    <p>Correo:</p>
-    <p>email@dominio.com</p>
-  </div>
-  <div class="flex.content">
-    <img src={imageA.src} alt="">
+    <h2>{title}</h2>
+    <p>
+      <a href="mailto:email@domain.com">comercial@venezolanadeacero.com</a>
+    </p>
   </div>
 </section>
     
@@ -19,50 +15,62 @@ import imageA from "../assets/image/image14.webp";
 
   section {
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     padding: 40px 5%;
     margin: 0;
     flex-direction: column;
-    background-color: $white;
-    gap: 50px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ), 
+      url("../assets/image/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 20px;
+    height: 400px; // Ajusta la altura según sea necesario
   }
 
   .content-flex {
-    margin: 0;
+    text-align: center;
+    color: $white; // Color blanco para el texto
   }
 
-  img {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 5px;
+  h2 {
+    font-size: 2.5rem;
+    font-weight: $bold;
+    color: $white; // Asegura que el texto sea blanco
+    margin: 0 0 10px;
   }
 
   p {
     font-size: 1.2rem;
-    padding: 10px 0;
-    color: $black;
+    color: $white; // Asegura que el texto sea blanco
     margin: 0;
   }
 
-  h2 {
-    padding-bottom: 30px;
+  a {
+    color: $white; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+
+    &:hover {
+      color: $grey; 
+    }
   }
 
   @media (min-width: 1024px) {
-
     section {
-      flex-direction: row-reverse;
+      height: 500px; 
     }
 
     h2 {
       font-size: 3rem;
     }
 
-    p{
+    p {
       font-size: 1.5rem;
-      padding: 20px;
     }
   }
 </style>

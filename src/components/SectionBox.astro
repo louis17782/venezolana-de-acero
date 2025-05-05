@@ -1,48 +1,40 @@
 ---
-const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
+import imageA from "../assets/image/card1.jpg";
+import imageB from "../assets/image/card2.jpg";
+import imageC from "../assets/image/card3.jpg";
+import imageD from "../assets/image/card4.webp";
+const { subtitleA, subtitleB, subtitleC, subtitleD } = Astro.props;	
+const { titleD, titleh, titlei } = Astro.props;
 ---
 
-<section id="projects">
-  <figure>
-    <div class="animated content-back-A">
-      <h4>{titleA}</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="animated content-back-B">
-      <h4>{titleB}</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="animated content-back-C">
-      <h4>{titleC}</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-  </figure>
-  <div id="ivs" class="content-text">
+<section id="ivs">
+  <div class="content-text">
     <h2>{titleD}</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    Necessitatibus atque molestiae omnis fugit culpa
-    reiciendis ratione quaerat aliquam excepturi nesciunt!</p>
+    <p>{titleh}</p>
+    <p>{titlei}</p>
   </div>
-  <article>
-    <div class="animated content-icon">
-      <i class="ph ph-chart-line-up"></i>
-      <h3>{titleE}</h3>
-      <p>Lorem ipsum dolor sit amet consectetur 
-      adipisicing elit. Officiis, aspernatur?</p>
+  <div class="section-card">
+    <div class="card">
+      <img src={imageA.src} alt="image">
+      <p class="text">{subtitleA}</p>
+      <div class="underline"></div>
     </div>
-    <div class="animated content-icon">
-      <i class="ph ph-buildings"></i>
-      <h3>{titleF}</h3>
-      <p>Lorem ipsum dolor sit amet consectetur 
-      adipisicing elit. Officiis, aspernatur?</p>
+    <div class="card">
+      <img src={imageB.src} alt="image">
+      <p class="text">{subtitleB}</p>
+      <div class="underline"></div>
     </div>
-    <div class="animated content-icon">
-      <i class="ph ph-factory"></i>
-      <h3>{titleG}</h3>
-      <p>Lorem ipsum dolor sit amet consectetur 
-      adipisicing elit. Officiis</p>
+    <div class="card">
+      <img src={imageC.src} alt="image">
+      <p class="text">{subtitleC}</p>
+      <div class="underline"></div>
     </div>
-  </article>
+    <div class="card">
+      <img src={imageD.src} alt="image">
+      <p class="text">{subtitleD}</p>
+      <div class="underline"></div>
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
@@ -71,91 +63,17 @@ const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
   .animated:nth-child(3) {
     transition-delay: 0.8s;
   }
-  //animation end
 
   section {
     position: relative;
     background-image: linear-gradient(rgba($blueTertiary, 85%), rgba($blueTertiary, 85%)), url("../assets/image/image19.webp");
     background-repeat: no-repeat;
-    background-position: center calc(50% + 570px);
     background-size: cover;
     padding: 40px 5%;
     overflow: hidden;
   }
 
-  figure{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto; 
-    max-width: 400px;
-    background-color: transparent;
-    gap: 50px;
-
-    p, h4{
-      color: $white;
-    }
-
-    p{
-      margin-bottom: 40px;
-    }
-  }
-
-  .content-back-B {
-    position: relative;
-    background-image:linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)), url("../assets/image/image19.webp");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    align-items: left;
-    width: 100%;
-    height: 300px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .content-back-A {
-    position: relative;
-    background-image:linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)), url("../assets/image/image9.webp");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    align-items: left;
-    width: 100%;
-    height: 300px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .content-back-C {
-    position: relative;
-    background-image:linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)), url("../assets/image/image22.webp");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    align-items: left;
-    width: 100%;
-    height: 300px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  p, h4{
-    margin: 10px 5%;
-  }
-
-  .content-text{
+  .content-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,9 +81,10 @@ const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
     width: 100%;
     gap: 30px;
     margin-top: 40px;
+    padding: 40px 0;
 
-    p{
-      margin: 0 0 50px;
+    p {
+      margin: 0;
       color: $white;
     }
 
@@ -174,67 +93,68 @@ const { titleA, titleB, titleC, titleD, titleE, titleF, titleG } = Astro.props;
     }
   }
 
-  article {
+  .section-card {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; 
     justify-content: center;
-    align-items: left;
+    align-items: stretch;
     width: 100%;
-    gap: 50px;
-    max-width: 400px;
     margin: 0 auto;
+    padding: 40px 5%;
+    gap: 20px;
+    overflow: hidden;
   }
 
-  .content-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
+  .section-card > div {
     width: 100%;
+    max-width: 500px; 
     margin-bottom: 20px; 
     background-color: $white;
     border-radius: 5px; 
-    padding: 20px;
-
-    p {
-     color: $black;
-      margin: 40px 0;
-    }
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1); 
+    padding:5px;
   }
 
-  .content-icon i {
-    font-size: 5rem;
-    color: $icon;
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  p {
+    color: $black;
+    margin: 0;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    font-family: $text;
+    font-weight: $regular;
+    color: $blueSecond;
+    margin: 10px 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    height: auto; 
   }
 
   @media only screen and (min-width: 1024px) {
-    figure {
-      flex-direction: row;
-      max-width: 900px;
-    }
-
     .content-text {
       text-align: center;
       align-items: center;
       padding: 50px;
-      p{
+
+      p {
         width: 70%;
       }
     }
 
-    article {
+    .section-card {
       flex-direction: row;
-      max-width: 950px;
+      flex-wrap: nowrap;
+      gap: 50px; 
     }
-
-    section {
-    position: relative;
-    background-image: linear-gradient(rgba($blueTertiary, 85%), rgba($blueTertiary, 85%)), url("../assets/image/image19.webp");
-    background-repeat: no-repeat;
-    background-position: center calc(10% + 270px);
-    background-size: cover;
-    padding: 40px 5%;
   }
-  }
-
 </style>

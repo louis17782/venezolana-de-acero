@@ -1,11 +1,10 @@
 ---
 import imageA from "../assets/image/image8.jpg";
 import imageB from "../assets/image/image24.webp";
-import imageC from "../assets/image/image14.webp";
-const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = Astro.props;	
+const { title, textA, textB, textC, subtitleA, subtitleB } = Astro.props;	
 ---
 
-<article id="#aboutSecond">
+<article id="projects">
 	<h2>{title}</h2>
 	<p class="animated">{textA}</p>
 </article>
@@ -21,12 +20,6 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		<p class="animated text">{subtitleB}</p>
 		<div class="underline"></div>
 		<p>{textC}</p>
-	</div>
-	<div class="card">
-		<img src={imageC.src} alt="image">
-		<p class="animated text">{subtitleC}</p>
-		<div class="underline"></div>
-		<p>{textD}</p>
 	</div>
 </section>
 
@@ -79,7 +72,7 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 		justify-content: center;
 		align-items: stretch;
 		width: 100%;
-		max-width: 1200px;
+		max-width: 700px;
 		margin: 0 auto;
 		background-color: $white;
 		padding: 40px 5%;
@@ -116,11 +109,11 @@ const { title, textA, textB, textC, textD, subtitleA, subtitleB, subtitleC } = A
 	}
 
 	.card {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch; 
-  height: auto; 
-}
+		display: flex;
+		flex-direction: column;
+		align-items: stretch; 
+		height: auto; 
+  }
 
 	@media only screen and (min-width: 1024px) {
 		article {

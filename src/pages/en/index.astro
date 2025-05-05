@@ -12,41 +12,43 @@ import Footer from "../../components/Footer.astro";
 import Contact from "../../components/Contact.astro";
 ---
 
-<EnglishLayout title="Venezolana de acero">
-	<HomeSlider images={[slide1.src, slide2.src, slide3.src, slide4.src]}
-	title="VENEZOLANA DE ACERO"
-	textB="DISTRIBUTOR OF STEEL PRODUCTS"
-	buttomA="See more"
-	buttomB="contact us"/>
-	<SectionFlex
-	title="Welcome..."
-	EN="TO"
-	textA="DISTRIBUTION OF STEEL PRODUCTS AT THE NATIONAL AND INTERNATIONAL LEVEL"
-	textB="Lorem ipsum dolor, labore molestias consequuntur earum dolorum est "
-	textC="lorem ipsum dolor sit"
-	buttomA="See more"
-	titleA="About us"
-	textD="We are a company specialized on the marketing and distribution of steel products on the national and international market to boost and transform the Venezuelan economy." />
-	<BoxNews
-	title="The company"
-	textA="Venezolana de Acero has as its main activity to commercialize, distribute and export products made by the national steel industry, as support and support in the Venezuelan economy!"
-	textB="Commercialize, distribute, and export products manufactured by the national steel industry."
-	textC="To be the leading company in promoting national and international marketing of the steel industry in Venezuela."
-	textD="PRODUCT"
-	subtitleA="MISION"
-	subtitleB="VISION"
-	subtitleC="PRODUCTO" />
-	<SectionBox
-	 titleA="contenido1"
-	 titleB="contenido2"
-	 titleC="contenido3"
-	 titleD="IVS CORP"
-	 titleE="contenido5"
-	 titleF="contenido6"
-	 titleG="contenido7"/>
-	  <Contact />
-	<Footer />
+<EnglishLayout title="Venezolana de Acero">
+    <HomeSlider 
+        images={[slide1.src, slide2.src, slide3.src, slide4.src]}
+        title="VENEZOLANA DE ACERO"
+        textB="DISTRIBUTOR OF STEEL PRODUCTS"
+        buttomA="Read more"
+        buttomB="Contact us"
+    />
+    <SectionFlex
+        title="Welcome..."
+        EN="TO"
+        textA="Distribution of steel products to the national and international market"
+        buttomA="Read more"
+        titleA="About us"
+        textD="We are a company specialized in the marketing and distribution of steel products at the national and international level to boost and transform Venezuela's economy."
+    />
+    <BoxNews
+        title="The company"
+        textA="Venezolana de Acero's main activity is to market, distribute, and export products manufactured by the national steel industry, as support and contribution to Venezuela's economy."
+        textB="Commercialize, distribute, and export products manufactured by the national steel industry."
+        textC="To be the leading company in promoting the national and international marketing of the steel industry in Venezuela."
+        subtitleA="MISSION"
+        subtitleB="VISION"
+    />
+    <SectionBox
+        titleD="IVS CORP"
+        subtitleA="Iron Ore"
+        subtitleB="Iron Ore Pellets"
+        subtitleC="HBI"
+        subtitleD="Tundish"
+        titleh="As part of a solid business group, IVS CORP specializes in the marketing and distribution of steel products at the international level."
+        titlei="Together with Venezolana de Acero, we complement a strategic alliance that allows us to carry out operations abroad, driving industrial development and contributing to Venezuela's economic transformation with innovative and high-performance solutions. This approach strengthens the company's collaboration and international reach."
+    />
+    <Contact 
+	title="CONTACT US"/>
+    <Footer />
 </EnglishLayout>
 <script>
-	import "../../script/mainMenu";
+    import "../../script/mainMenu";
 </script>
